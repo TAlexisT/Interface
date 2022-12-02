@@ -1,0 +1,74 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="900" d:DesignHeight="500"
+		Width="900"
+		Height="500"
+		Background="Turquoise"
+        x:Class="PracticaInt.Views.ArbolV"
+		Icon="/Assets/avalonia-logo.ico"
+        Title="Arbol">
+
+	<Grid RowDefinitions="Auto,*,*">
+
+		<Grid Grid.Row="0" Height="40">
+			<Button Click="VolverArB" Height="20" Width="15" HorizontalAlignment="Left" FontWeight="ExtraBold" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"></Button>
+		</Grid>
+
+	
+		<Grid Grid.Row="1" Background="Turquoise" >
+
+			<Grid ColumnDefinitions="*,*,*,*,*" RowDefinitions="*,*">
+
+				
+				<Grid Grid.Row="0" Grid.Column="0" RowDefinitions="*,*">
+					<TextBox Name="ANodoN" Grid.Row="1" Watermark="Nuevo Nodo" FontWeight="SemiBold" FontSize="12" Foreground="Black" HorizontalContentAlignment="Left" Background="SteelBlue" VerticalContentAlignment="Center" VerticalAlignment="Top" Height="30" Width="90"></TextBox>
+				</Grid>
+
+			
+				<Grid Grid.Row="0" Grid.Column="1" RowDefinitions="*,*">
+					<TextBox Name="NodoPa" Grid.Row="1" Watermark="Padre" FontSize="12" FontWeight="SemiBold" Background="SteelBlue" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" VerticalAlignment="Top" HorizontalAlignment="Left" Height="30" Width="85"></TextBox>
+				</Grid>
+
+				
+				<Grid Grid.Row="0" Grid.Column="2" RowDefinitions="*,*">
+					<ComboBox Name="LadoArb" Grid.Row="1" SelectedIndex="0" HorizontalAlignment="Left" Height="30" Background="SteelBlue">
+						<ComboBoxItem>Izquierda</ComboBoxItem>
+						<ComboBoxItem>Derecha</ComboBoxItem>
+					</ComboBox>
+				</Grid>
+
+				<Button Name="Nododeo" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" FontWeight="SemiBold" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="GreenYellow" Height="35" Width="75" Click="AddButton_Clicked">Guardar</Button>
+
+				<Grid Grid.Row="1" Grid.Column="0" RowDefinitions="*,*">
+					<TextBox Name="ArNodoEl" Width="90" Height="30" Background="SteelBlue" Grid.Row="0" FontWeight="SemiBold" Watermark="NodoAE" FontSize="12" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"></TextBox>
+					<Button Click="ArEliminarB" FontWeight="SemiBold" Background="GreenYellow" Grid.Row="1" Height="35" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Top">Eliminar</Button>
+				</Grid>
+			
+				
+			</Grid>
+			
+		</Grid>
+
+		<Grid Grid.Row="3" Background="Turquoise" RowDefinitions="*,*">
+			<Grid ColumnDefinitions="*,*,*,*,*,*">
+				<Button Grid.Column="0" Click="AltoB" VerticalAlignment="Top" Background="GreenYellow" FontWeight="SemiBold" Height="35" VerticalContentAlignment="Center" HorizontalAlignment="Center">Altura</Button>
+				<Label Grid.Column="0" Name="AlNodo" VerticalContentAlignment="Center" Width="30" Height="30" HorizontalAlignment="Center" VerticalAlignment="Center" Background="SteelBlue" HorizontalContentAlignment="Left"> 0 </Label>
+				<Button Grid.Column="2" Click="ArBuscar" HorizontalAlignment="Center" VerticalAlignment="Top" Background="GreenYellow" Height="35" VerticalContentAlignment="Center" FontWeight="SemiBold">Buscar</Button>
+				<TextBox Name="NodoBus" Grid.Column="2" VerticalContentAlignment="Center" FontSize="12" Background="SteelBlue" FontWeight="SemiBold" HorizontalAlignment="Center" Height="20" Width="80" Watermark="Insertar"></TextBox>
+				<Button Click="TransversalAr" Grid.Column="1" VerticalAlignment="Top" Background="GreenYellow" FontWeight="SemiBold" Height="35" VerticalContentAlignment="Center" HorizontalAlignment="Center"> Ordenes</Button>
+				<ComboBox Name="TransversalOrden" Grid.Column="1" HorizontalAlignment="Center" Background="SteelBlue" FontSize="13" VerticalAlignment="Center" SelectedIndex="0">
+					<ComboBoxItem>Inorder</ComboBoxItem>
+					<ComboBoxItem>Preorder</ComboBoxItem>
+					<ComboBoxItem>Postorder</ComboBoxItem>
+				</ComboBox>
+				
+			</Grid>
+			<Grid Grid.Row="1" ColumnDefinitions="*,*,*,*">
+				<Label Grid.Column="2" VerticalAlignment="Center" FontWeight="SemiBold" Name="Mostrar2" Width="350"></Label>
+			</Grid>
+
+		</Grid>
+	</Grid>
+</Window>

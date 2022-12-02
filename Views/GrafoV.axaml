@@ -1,0 +1,70 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="900" d:DesignHeight="500"
+        Width="900"
+		Height="500"
+		Background="Turquoise"
+		Icon="/Assets/avalonia-logo.ico"
+		x:Class="PracticaInt.Views.GrafoV"
+        Title="Grafo">
+	<Grid RowDefinitions="Auto,*,*,*,*,*,*,*">
+
+		<Grid Grid.Row="0" Height="40" Background="Turquoise">
+			<Button Click="EspacioB" Height="20" Width="15" HorizontalAlignment="Left" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontWeight="Bold" VerticalAlignment="Center"></Button>
+		</Grid>
+
+		
+		<Grid Grid.Row="1" ColumnDefinitions="*,*,*,*" Background="Turquoise">
+			<Button Click="NNodoB" Grid.Row="0" Grid.Column="0" Background="YellowGreen" VerticalAlignment="Bottom" FontWeight="SemiBold" HorizontalAlignment="Center">Agregar Nodo</Button>
+
+
+		</Grid>
+
+		
+		<Grid Grid.Row="2" RowDefinitions="*,*" ColumnDefinitions="*,*,*,*,*" Background="Turquoise">
+			<TextBox Name="InicioN" Grid.Row="1" Grid.Column="1" FontWeight="SemiBold" Background="SteelBlue" HorizontalAlignment="Left" Watermark="Inicio" Height="10" Width="80"></TextBox>
+			<TextBox Name="FinalN" Grid.Row="1" Grid.Column="1" Watermark="Final" FontWeight="SemiBold" Height="10" HorizontalAlignment="Right" Background="SteelBlue" Width="80"></TextBox>
+			<TextBox Name="PesoN" Grid.Row="1" Grid.Column="0" Watermark="Peso" FontWeight="SemiBold" Height="10" Background="SteelBlue" Width="80"></TextBox>
+			<Button Click="NAristaB" Grid.Row="1" Grid.Column="2" FontWeight="SemiBold" HorizontalAlignment="Center" Background="YellowGreen" Height="30">Agregar Arista</Button>
+		</Grid>
+
+		
+		<Grid Grid.Row="3" RowDefinitions="*,*" ColumnDefinitions="*,*,*,*,*" Background="Turquoise">
+			<TextBox Name="EliminarN" Grid.Row="1" Grid.Column="0" FontWeight="SemiBold" Background="SteelBlue" Watermark="Insertar" Height="20" Width="80"></TextBox>
+			<Button  Click="EliminarB" Grid.Row="1" FontWeight="SemiBold" Background="YellowGreen" Grid.Column="1" >Eliminar Nodo</Button>
+		</Grid>
+
+	
+		<Grid Grid.Row="4" RowDefinitions="*,*" ColumnDefinitions="*,*,*,*,*" Background="Turquoise">
+
+			<TextBox Name="EliminarAI" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" FontWeight="SemiBold" Watermark="Inicio" Background="SteelBlue" Height="20" Width="80"></TextBox>
+			<TextBox Name="EliminarAF" Grid.Row="1" Grid.Column="1" FontWeight="SemiBold" HorizontalAlignment="Left" Watermark="Final" Background="SteelBlue" Height="20" Width="80"></TextBox>
+			<Button  Click="EliminarAB" Grid.Row="1" FontWeight="SemiBold" Background="YellowGreen" HorizontalAlignment="Left" Grid.Column="2" >Eliminar Arista</Button>
+		</Grid>
+		
+		<Grid Grid.Row="5" ColumnDefinitions="*,*,*,*,*,*" Background="Turquoise">
+			<Grid Grid.Column="2" HorizontalAlignment="Center" RowDefinitions="*,*">
+				<TextBox Name="DestinoC" Grid.Row="1" Grid.Column="3" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalAlignment="Top" FontWeight="SemiBold" Background="SteelBlue" Watermark="NodoF"></TextBox>
+			</Grid>
+			<Button Click="Corto" Width="172" Grid.Column="3" FontWeight="SemiBold" HorizontalAlignment="Left" Background="YellowGreen" VerticalAlignment="Bottom">Imprimir Camino Corto</Button>
+			
+			<ComboBox Name="ele" Grid.Column="0" Width="70" HorizontalAlignment="Center" Background="SteelBlue" SelectedIndex="0" VerticalAlignment="Bottom">
+				<ComboBoxItem>BFS</ComboBoxItem>
+				<ComboBoxItem>DFS</ComboBoxItem>
+			</ComboBox>
+			<Button Click="TransversalB" Grid.Column="1" HorizontalContentAlignment="Center" Background="YellowGreen" FontWeight="SemiBold" Width="160" VerticalAlignment="Bottom">Imprimir Transversal</Button>
+		</Grid>
+		
+		<Grid Grid.Row="6" ColumnDefinitions="*,*,*" Background="Turquoise">
+			<TextBox Name="Destino2" Grid.Column="1" HorizontalAlignment="Left" Background="SteelBlue" VerticalAlignment="Center" FontWeight="SemiBold" Watermark="NodoF"></TextBox>
+			<Button Click="LargoB" Grid.Column="1" HorizontalAlignment="Right" FontWeight="SemiBold" Background="YellowGreen" >Imprimir Camino Largo</Button>
+		</Grid>
+		
+		<Grid Grid.Row="7" ColumnDefinitions="*,*,*,*" Background="Turquoise">
+			<Label Name="Muestra" Grid.Column="0" HorizontalAlignment="Left" FontWeight="SemiBold" VerticalAlignment="Center" Width="500"></Label>
+		</Grid>
+	</Grid>
+</Window>
+
